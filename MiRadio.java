@@ -9,6 +9,9 @@ public class MiRadio implements Radio{
     public MiRadio(){}
     
     boolean on = false;
+    boolean frequency = false;
+    double station;
+    double[] savedStationsAM = {530,540,550,560,570,580,590,600,610,620,630,640};
 
     @Override
     public boolean isOn() {
@@ -18,11 +21,7 @@ public class MiRadio implements Radio{
 
     @Override
     public void turnOnOff() {
-        if(on){
-            on=false;
-        }else{
-            on=true;
-        }        
+        on= !on;        
     }
 
     @Override
@@ -58,11 +57,12 @@ public class MiRadio implements Radio{
     @Override
     public boolean getFrequency() {
         // TODO Auto-generated method stub
-        return false;
+        return frequency;
     }
 
     @Override
     public void switchAMFM() {
+        frequency = !frequency;
         // TODO Auto-generated method stub
         
     }
