@@ -10,7 +10,7 @@ implemente la interfaz Radio.java
 public class Driver {
     
     private static MiRadio r;
-    private static Scanner scan;
+    private static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
         r = new MiRadio();
@@ -34,6 +34,7 @@ public class Driver {
 			scan = new Scanner(System.in);
 			try{opcion = scan.nextInt();}
 			catch(Exception e){System.out.println("INVALIDO");}
+			//catch(Exception e){System.out.println("INVALIDO");}
 
 			if (opcion == 1){prender();}
             else if(opcion ==2){cambiarAM_FM();}
@@ -42,10 +43,10 @@ public class Driver {
 			else if(opcion ==5){seleccionarEmisora();}
 			else if(opcion ==6){apagar();}
 			else{ System.out.println("Agregue una entrada valida del menu");}
-            scan.close();
+            
+            }
 		}
-		System.out.println("Programa finalizado");
-    }
+    
 
     /**
      * Prende la radio si se encuentra apagada, o despliega que se
@@ -57,7 +58,7 @@ public class Driver {
             System.out.println("La radio ya se encuentra encendida");
         }else {
             r.turnOnOff();
-            System.err.println("Se ha encendido la radio");
+            System.out.println("Se ha encendido la radio");
         }
     }
 
@@ -92,7 +93,6 @@ public class Driver {
             if (!(0<position && position <13)) {
                System.out.println("Elija un entero del 1-12"); 
             }
-            scan.close();
 		}
 
         r.saveStation(position, station);

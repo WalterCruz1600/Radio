@@ -6,18 +6,23 @@ Clase que implementa la interfaz de radio.
 ******************************************************************/
 public class MiRadio implements Radio{
 
-    public MiRadio(){}    
+    public MiRadio(){}
+    
+    boolean on = false;
 
     @Override
     public boolean isOn() {
-        // TODO Auto-generated method stub
-        return false;
+                
+        return on;
     }
 
     @Override
     public void turnOnOff() {
-        // TODO Auto-generated method stub
-        
+        if(on){
+            on=false;
+        }else{
+            on=true;
+        }        
     }
 
     @Override
