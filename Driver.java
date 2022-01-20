@@ -107,12 +107,8 @@ public class Driver {
                System.out.println("Elija un entero del 1-12"); 
             }
 		}
-        if(r.getFrequency()){
-            r.saveStation(position-1, station);
-        }else{
-            r.saveStation(position+12-1, station);
-        }
-        
+        r.saveStation(position, station);
+                
         System.out.println("Se ha guardado la emisora "+station+" en el boton "+position);
         } else {
             System.out.println("La radio se encuentra apagada");
@@ -125,7 +121,6 @@ public class Driver {
      * solo acepta de 1-12
      */
     private static void seleccionarEmisora() {
-        //TODO averiguar si no hace falta un getStation
 
         if (r.isOn()) {
             double station = r.getStation();
@@ -146,13 +141,9 @@ public class Driver {
             }
 		}
 
-        if(r.getFrequency()){
-            station=r.getSavedStation(position-1);
-        }else{
-            station=r.getSavedStation(position+12-1);
-        }
-
+        station=r.getSavedStation(position);
         System.out.println("La emisora "+station+" está en el boton "+position+" y ahora esta sonando");
+
         } else {
             System.out.println("La radio se encuentra apagada");
         }
@@ -199,6 +190,7 @@ public class Driver {
 
         
     }
+    
     /**
      * retrocede el Dial dependiendo de la frecuencia
      * si llega al mínimo se envía a la estación más alta

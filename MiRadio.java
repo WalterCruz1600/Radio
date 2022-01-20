@@ -32,7 +32,6 @@ public class MiRadio implements Radio{
 
     @Override
     public void nextStation(boolean frecuency) {
-        // TODO Auto-generated method stub
 
         if(frecuency){
             //Si es AM entonces avanza a la siguiente emisora con +10
@@ -54,7 +53,6 @@ public class MiRadio implements Radio{
 
     @Override
     public void prevStation(boolean frecuency) {
-        // TODO Auto-generated method stub
         
         if(frecuency){
             //Si es AM entonces retrocede a la emisora anterior con -10
@@ -78,60 +76,46 @@ public class MiRadio implements Radio{
     public double getStation() {
         //En este caso se regresa la estación de emisora dependiendo de la frecuencia en la que esté
         //ya sea AM o FM
-        if(frequency){
-            
+        if(frequency){    
             return stationAM;
         }else{
             stationFM=(double)Math.round(stationFM * 100d) / 100d;
             return stationFM;
         }
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void saveStation(int position, double station) {
-        // TODO Auto-generated method stub
-        //Revisa si es de los botones de FM
-        if(station<108.0&&station>87.6){
-            //Si es FM los almacena en uno de los botones de FM
-            savedStations[position]=station;
-            
-        //Revisa si es de los botones de AM
-        }else if(station<1611&&station>529){
-
-            //Si es AM los almacena en uno de los botones de AM
-            savedStations[position]=station;
-            
+        if (position>0 && position<13) { //verifica que el valor sea valido (1-12), de lo contrario no hace nada
+            if(frequency){ // si es AM
+                position = position-1; //cambia los valores del indice de 1-12 a 0-11
+            }else{ //si es FM
+                position = position+12-1; //cambia los valores del indice de 1-12 a 12-23                
+            }
+            savedStations[position]=station; //guarda en savedStations en la posicion correspondiente
         }
-
     }
 
     @Override
     public double getSavedStation(int position) {
-        // TODO Auto-generated method stub
-        //revisa la posición para saber si es FM
-        if(position>11){
-
-           //Al momento de apachar el botón esa emisora empieza a sonar en la frecuencia en la que esté
-            stationFM=savedStations[position];
-
-        //revisa la posición para saber si es AM
-        }else if(position<12){
-
-            //Al momento de apachar el botón esa emisora empieza a sonar en la frecuencia en la que esté
-            stationAM=savedStations[position];
-            
+        double station = 0.0; //valor inicial donde se guarara el valor que devolvera       
+        if (position>0 && position<13) {//verifica que el valor sea valido (1-12), de lo contrario no hace nada
+            if(frequency){ //si es AM
+                stationAM=savedStations[position-1]; //Busca la emisora en las posiciones 0-11 (AM)
+                station = stationAM;
+            }else{ //si es FM
+                stationFM=savedStations[position+12-1]; //Busca la emisora en las posiciones 12-23 (FM)
+                station = stationFM;          
+            }
         }
-
-        return savedStations[position];
+        return station;
     }
 
     @Override
     public boolean getFrequency() {
-        // TODO Auto-generated method stub
-        //Este método regresa la frecuencia si es AM o FM
-        return frequency;
+        return frequency;       
+
     }
 
     @Override
@@ -139,7 +123,6 @@ public class MiRadio implements Radio{
         //Este método cambia de frecuencia AM a FM
         //AM es positivo y FM es negativo
         frequency = !frequency;
-        // TODO Auto-generated method stub
         
     }
 
