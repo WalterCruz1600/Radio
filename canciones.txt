@@ -1,0 +1,25 @@
+Nombre			Tiempo_Min	Tiempo_Seg	Autor		Genero1			Genero2		Genero3			Año
+Bones				2	45	Imagine_Dragons		banda			pop		rock			2022
+Camisa_Negra			3	39	Juanes			solista			pop		rock			2004
+Ainsi_bas_la_vida		3	35	Indila			solista			french_urban	R&B			2014
+Counting_Stars			4	44	One_Republic		banda			dance		pop rock		2013
+September			3	36	Earth,_Wind_&_Fire	banda			disco		R&B			1978
+Hotel_California		6	30	Eagles			banda			rock		folk			1976
+Back_in_black			4	14	AC_DC			banda			heavy_metal	hard_rock		1980
+I_Was_Made_for_Lovin’_You	3	59	KISS			banda			rock		hard_rock		1979
+Cuando_calienta_el_sol		3	56	Luis_Miguel		solista			tropical	pop  			1987
+Lamento_Boliviano		3	43	Enanitos_Verdes		banda			rock		rock_español		1994
+Devuelveme_a_mi_chica		3	16	Hombres_G		banda			new_wave	pop_rock		1985
+Hasta_que_te_conocí		6	58	Juan_Gabriel		solista			pop		regional_mexicana	1986
+Rayando_el_sol			4	10	Mana			solista			pop		rock  			1990
+Faded				3	33	Alan_Walker		solista			electronica	house			2015
+Sinfonía_n.º_5			34	34	Ludwig_van_Beethoven	orquesta		clasica		sinfonia		1808
+Bailando			4	40	Enrique_Iglesias	colaboracion		dance  		urban_latino		2014
+Waiting_For_Love		3	51	Avicii			solista			dance		electronica		2014
+Pollito_Pio			2	46	Pulcino_Pio		duo			infantil	electrónica		2012
+Las_mañanitas			2	41	Vicente_Fernández	solista			ranchera	regional_mexicana	1988
+Alone				3	20	Marshmello		solista			trap		electrónica		2016
+Pompeii				3	33	bastille		banda			pop		synth			2013
+Me_voy_enamorando		5	41	Chino_&_Nacho		duo			tropical	urban_latino		2015
+Feliz_Navidad			3	10	Jose_Feliciano		solista			navideño	pop_latino		1970
+Concierto_para_piano_n.º_21	6	19	Wolfgang_Amadeus_Mozart	solista			orquesta	clasico			1785
